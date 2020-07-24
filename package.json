@@ -1,0 +1,11 @@
+{
+  "name": "lnglat-converter",
+  "version": "1.0.0",
+  "description": "WGS84-GCJ02-BD09坐标系经纬度互相转换",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lyttonlee",
+  "license": "ISC"
+}
