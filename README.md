@@ -31,7 +31,32 @@ const gcj02Point = converter.wgs84togcj02(wgs84Point[1], wgs84Point[0])
 
 > 提供以下转换方法
 
+**注意**
+
+> 调用wgs84tobd09时不支持解构赋值的方式
+
 ```javascript
+
+//  error
+
+import { wgs84tobd09 } from 'lnglat-converter'
+
+// wgs84tobd09 方法实际上先调用 -> wgs84togcj02 -> 然后调用 gcj02tobd09
+
+// 所以请不要单独引入 wgs84tobd09 方法来转换坐标
+
+// ------------------
+
+// ok 以下方式可以正常工作
+
+import { gcj02tobd09, wgs84togcj02 } from 'lnglat-converter'
+```
+
+
+> 推荐方式
+
+```javascript
+import converter from 'lnglat-converter'
 converter.bd09togcj02(lng, lat)
 converter.gcj02tobd09(lng, lat)
 converter.wgs84tobd09(lng, lat)

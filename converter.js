@@ -50,6 +50,7 @@ function transformlng(lng, lat) {
   return ret
 }
 
+
 const converter = {
 
   /**
@@ -133,7 +134,7 @@ const converter = {
   gcj02towgs84: function gcj02towgs84(lng, lat) {
     lat = +lat;
     lng = +lng;
-    if (out_of_china(lng, lat)) {
+    if (!IsInChina(lng, lat)) {
       return [lng, lat]
     } else {
       var dlat = transformlat(lng - 105.0, lat - 35.0);
